@@ -10,6 +10,7 @@ import {OStandardType} from "@element-ts/oxygen";
 import {verifyToken, verifyUser} from "../auth";
 import {Link} from "@quik-link/core";
 import {SiQuery} from "@element-ts/silicon";
+import {Neon} from "@element-ts/neon";
 
 export const linkEndpoint = new HEndpointGroup();
 
@@ -48,8 +49,8 @@ linkEndpoint.getDynamic(async (req, res) => {
 	const linkId = req.getEndpoint();
 	const link = await SiQuery.getObjectForId(Link, linkId);
 	if (link === undefined) return res.err(HErrorStatusCode.NotFound, "Link does not exist.");
-	console.log(user.getId());
-	console.log(typeof (user.getIdNullable()?.toString()));
+	Neon.log(user.getId());
+	Neon.log(link.props.userId);
 	if (user.getId() !== link.props.userId) return res.err(HErrorStatusCode.UnAuthorized, "This is not your link.");
 	res.sendHObject(link);
 });

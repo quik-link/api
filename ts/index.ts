@@ -17,10 +17,10 @@ import {Neon} from "@element-ts/neon";
 	await SiDatabase.init({
 		database: "quiklink",
 		address: "mongodb://localhost:27017",
-		verbose: false
+		debug: true
 	});
 
-	new HHTTPServer(rootEndpoint, {debug: false}).start(3000);
+	new HHTTPServer(rootEndpoint, {debug: true}).start(3000);
 
 })().catch((err: any) => console.error(err));
 
