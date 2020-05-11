@@ -33,9 +33,9 @@
 	"dependencies": {
 		"@element-ts/hydrogen": "latest",
 		"@element-ts/krypton": "latest",
-		"@element-ts/oxygen": "^1.1.3",
+		"@element-ts/oxygen": "latest",
 		"@element-ts/silicon": "latest",
-		"@quik-link/core": "^0.1.1"
+		"@quik-link/core": "^0.1.3"
 	},
 	"devDependencies": {
 		"@types/node": "latest",
