@@ -8,11 +8,11 @@
 import {HHTTPServer} from "@element-ts/hydrogen";
 import {SiDatabase} from "@element-ts/silicon";
 import {rootEndpoint} from "./endpoints/root-endpoint";
-import {Neon} from "@element-ts/neon";
+import {Logger} from "./Logger";
 
 (async (): Promise<void> => {
 
-	Neon.setTitle("quik-link/core");
+	Logger.neon.setTitle("quik-link");
 
 	await SiDatabase.init({
 		database: "quiklink",

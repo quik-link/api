@@ -11,6 +11,7 @@ import {verifyToken, verifyUser} from "../auth";
 import {Link} from "@quik-link/core";
 import {SiQuery} from "@element-ts/silicon";
 import {Neon} from "@element-ts/neon";
+import {Logger} from "../../Logger";
 
 export const linkEndpoint = new HEndpointGroup();
 
@@ -49,8 +50,8 @@ linkEndpoint.getDynamic(async (req, res) => {
 	const linkId = req.getEndpoint();
 	const link = await SiQuery.getObjectForId(Link, linkId);
 	if (link === undefined) return res.err(HErrorStatusCode.NotFound, "Link does not exist.");
-	Neon.log(user.getId());
-	Neon.log(link.props.userId);
+	Logger.neon.log(user.getId());
+	Logger.neon.log(link.props.userId);
 	if (user.getId() !== link.props.userId) return res.err(HErrorStatusCode.UnAuthorized, "This is not your link.");
 	res.sendHObject(link);
 });

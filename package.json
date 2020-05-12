@@ -31,12 +31,12 @@
 	},
 	"homepage": "https://github.com/quik-link/api#readme",
 	"dependencies": {
-		"@element-ts/hydrogen": "latest",
+		"@element-ts/hydrogen": "^1.0.5",
 		"@element-ts/krypton": "latest",
-		"@element-ts/neon": "latest",
+		"@element-ts/neon": "^1.0.1",
 		"@element-ts/oxygen": "latest",
-		"@element-ts/silicon": "^0.1.14",
-		"@quik-link/core": "^0.1.5"
+		"@element-ts/silicon": "latest",
+		"@quik-link/core": "latest"
 	},
 	"devDependencies": {
 		"@types/node": "latest",
